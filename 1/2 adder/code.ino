@@ -1,6 +1,6 @@
 // Made by Elliott
 // Made May 2026
-// Gose throgh the truth table for a 1/2 adder
+// Goes through the truth table for a 1/2 adder
 
 // pin 7 = B bit one
 // pin 6 = A bit one
