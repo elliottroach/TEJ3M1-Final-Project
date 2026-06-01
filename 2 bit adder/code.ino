@@ -35,15 +35,20 @@ void loop() {
     digitalWrite(pin13, LOW);
     digitalWrite(pin2, LOW);
     digitalWrite(pin3, LOW);
-    const int onesColom = 1
-    const int twosColom = 2
-    const int fourssColom = 4
-    const int eightsColom = 8
+    const int onesColom = 1;
+    const int twosColom = 2;
+    const int fourssColom = 4;
+    const int eightsColom = 8;
     int aOne = 0;
     int aTwo = 0;
     int bOne = 0;
     int bTwo = 0; 
     int cIn = 0;
+
+    int aOneDesamal = 0;
+    int bOneDesamal = 0;
+    int aTwoDesamal = 0;
+    int bTwoDesamal = 0;
 
     for (bTwo = 0; bTwo < 2; bTwo++) {
         for (aOne = 0; aOne < 2; aOne++) {
@@ -55,16 +60,20 @@ void loop() {
                 Serial.print ("A = " + String(aTwo) + String(aOne) + "\n");
                 Serial.print ("B = " + String(bTwo) + String(bOne) + "\n");
                 if (aOne == 1) {
-                    aOne = onesColom
+                    aOneDesamal = onesColom;
                 } else if (bOne == 1) {
-                    bOne = onesColom
+                    bOneDesamal = onesColom;
                 } else if (aTwo == 1) {
-                    aTwo = twosColom
+                    aTwoDesamal = twosColom;
                 } else if (bTwo == 1) {
-                    bTwo = twosColom
+                    bTwoDesamal = twosColom;
                 }
-                Serial.print (String(aTwo + aOne) + " + " + String(bTwo +bOne) + " = " + String(aTwo + aOne + bTwo + bOne + cIn) + "\n\n");
+                Serial.print (String(aOneDesamal + aTwoDesamal) + " + " + String(bOneDesamal +bTwoDesamal) + " = " + String(aTwoDesamal + aOneDesamal + bTwoDesamal + bOneDesamal + cIn) + "\n\n");
                 delay(2000);
+                aOneDesamal = 0;
+                aTwoDesamal = 0;
+                bOneDesamal = 0;
+                bTwoDesamal = 0;
             }
         }
     }
