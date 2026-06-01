@@ -1,6 +1,6 @@
-// Made by Elliott Roach and Aimar Fernandez
-// Made June 2026
-// Goes through the truth table for a 2 bit adder in 2's complement
+// Made by Elliott
+// Made May 2026
+// Goes through the truth table for a 2 bit adder
 
 // pin 7 = B bit one
 // pin 6 = A bit one
@@ -36,20 +36,16 @@ void loop() {
     digitalWrite(pin2, LOW);
     digitalWrite(pin3, LOW);
     const int onesColom = 1;
-    const int twosColom = 2;
-    const int fourssColom = 4;
-    const int eightsColom = 8;
+    const int twosColom = -2;
 
+    // base 2
     int aOne = 0;
     int aTwo = 0;
     int bOne = 0;
     int bTwo = 0; 
     int cIn = 0;
 
-    int bOneNeg = 0;
-    int aOneNeg = 0; 
-
-    // base 10
+    // bace 10
     int fullDesamalValue = 0;
     int bDesamalValue = 0;
     int aDesamalValue = 0;
@@ -59,49 +55,31 @@ void loop() {
     int bTwoDesamal = 0;
 
     for (aTwo = 0; aTwo < 2; aTwo++) {
-      for (bTwo = 0; bTwo < 2; bTwo++) {
-          for (aOne = 0; aOne < 2; aOne++) {
-              for (bOne = 0; bOne < 2; bOne++) {
-                  if (aTwo = 1) {
-                      aOne = 0;
-                      if (aOneNeg == 0) {
-                        aOneNeg = 1;
-                      } 
-                  }
-                  if (bTwo = 1) {
-                      bOne = 0;
-                      if (bOneNeg == 0) {
-                        bOneNeg = 1;
-                      } 
-                  }
-                  digitalWrite(pin6, aOneNeg);
-                  digitalWrite(pin7, aOneNeg);
-                  digitalWrite(pin2, aTwo);
-                  digitalWrite(pin3, bTwo);
-                  if (aOne == 1) {
-                      aOneDesamal = onesColom;
-                  } 
-                  if (bOne == 1) {
-                      bOneDesamal = onesColom;
-                  } 
-                  if (aTwo == 1) {
-                      aOneDesamal = onesColom - onesColom - onesColom;
-                  } 
-                  if (bTwo == 1) {
-                      bOneDesamal = onesColom - onesColom - onesColom;
-                  }
-                  aDesamalValue = aOneDesamal + aTwoDesamal;
-                  bDesamalValue = bOneDesamal + bTwoDesamal;
-                  Serial.print ("A = " + String(aDesamalValue) + "\n");
-                  Serial.print ("B = " + String(bDesamalValue) + "\n");
-                  Serial.print (String(aDesamalValue) + " + " + String(bDesamalValue) + " = " + String(aDesamalValue + bDesamalValue) + "\n\n");
-                  delay(2000);
-                  aOneDesamal = 0;
-                  aTwoDesamal = 0;
-                  bOneDesamal = 0;
-                  bTwoDesamal = 0;
-              }
-          }
-      }
-  }
+        for (bTwo = 0; bTwo < 2; bTwo++) {
+            for (aOne = 0; aOne < 2; aOne++) {
+                for (bOne = 0; bOne < 2; bOne++) {
+                    digitalWrite(pin6, aOne);
+                    digitalWrite(pin7, bOne);
+                    digitalWrite(pin2, aTwo);
+                    digitalWrite(pin3, bTwo);
+                    Serial.print ("A = " + String(aTwo) + String(aOne) + "\n");
+                    Serial.print ("B = " + String(bTwo) + String(bOne) + "\n");
+
+                    aDesamalValue = (aTwo * twosColom) + (aOne * onesColom);
+                    bDesamalValue = (bTwo * twosColom) + (bOne * onesColom);
+
+                    fullDesamalValue = aDesamalValue + bDesamalValue;
+
+                    Serial.print (String(aDesamalValue) + " + " + String(bDesamalValue) + " = " + String(fullDesamalValue) + "\n\n");
+                    delay(2000);
+
+                    // reseting
+                    aOneDesamal = 0;
+                    aTwoDesamal = 0;
+                    bOneDesamal = 0;
+                    bTwoDesamal = 0;
+                }
+            }
+        }
+    }
 }
