@@ -50,34 +50,38 @@ void loop() {
     int aTwoDesamal = 0;
     int bTwoDesamal = 0;
 
-    for (bTwo = 0; bTwo < 2; bTwo++) {
-        for (aOne = 0; aOne < 2; aOne++) {
-            for (bOne = 0; bOne < 2; bOne++) {
-                digitalWrite(pin13, cIn);
-                digitalWrite(pin6, aOne);
-                digitalWrite(pin7, bOne);
-                Serial.print ("CIn = " + String(cIn) + "\n");
-                Serial.print ("A = " + String(aTwo) + String(aOne) + "\n");
-                Serial.print ("B = " + String(bTwo) + String(bOne) + "\n");
-                if (aOne == 1) {
-                    aOneDesamal = onesColom;
-                } 
-                if (bOne == 1) {
-                    bOneDesamal = onesColom;
-                } 
-                if (aTwo == 1) {
-                    aTwoDesamal = twosColom;
-                } 
-                if (bTwo == 1) {
-                    bTwoDesamal = twosColom;
-                }
-                Serial.print (String(aOneDesamal + aTwoDesamal) + " + " + String(bOneDesamal +bTwoDesamal) + " = " + String(aTwoDesamal + aOneDesamal + bTwoDesamal + bOneDesamal + cIn) + "\n\n");
-                delay(2000);
-                aOneDesamal = 0;
-                aTwoDesamal = 0;
-                bOneDesamal = 0;
-                bTwoDesamal = 0;
-            }
-        }
-    }
+    for (aTwo = 0; aTwo < 2; aTwo++) {
+      for (bTwo = 0; bTwo < 2; bTwo++) {
+          for (aOne = 0; aOne < 2; aOne++) {
+              for (bOne = 0; bOne < 2; bOne++) {
+                  digitalWrite(pin13, cIn);
+                  digitalWrite(pin6, aOne);
+                  digitalWrite(pin7, bOne);
+                  digitalWrite(pin2, aTwo);
+                  digitalWrite(pin3, bTwo);
+                  Serial.print ("CIn = " + String(cIn) + "\n");
+                  Serial.print ("A = " + String(aTwo) + String(aOne) + "\n");
+                  Serial.print ("B = " + String(bTwo) + String(bOne) + "\n");
+                  if (aOne == 1) {
+                      aOneDesamal = onesColom;
+                  } 
+                  if (bOne == 1) {
+                      bOneDesamal = onesColom;
+                  } 
+                  if (aTwo == 1) {
+                      aTwoDesamal = twosColom;
+                  } 
+                  if (bTwo == 1) {
+                      bTwoDesamal = twosColom;
+                  }
+                  Serial.print (String(aOneDesamal + aTwoDesamal) + " + " + String(bOneDesamal +bTwoDesamal) + " = " + String(aTwoDesamal + aOneDesamal + bTwoDesamal + bOneDesamal + cIn) + "\n\n");
+                  delay(2000);
+                  aOneDesamal = 0;
+                  aTwoDesamal = 0;
+                  bOneDesamal = 0;
+                  bTwoDesamal = 0;
+              }
+          }
+      }
   }
+}
