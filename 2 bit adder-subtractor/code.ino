@@ -100,8 +100,7 @@ void loop() {
                         aTwoDesamal = 0;
                         bOneDesamal = 0;
                         bTwoDesamal = 0;
-                        addSubSymbol = '+';
-                        addSub = 0;
+						addSubSymbol = '+';
                     }
                 }
             }
