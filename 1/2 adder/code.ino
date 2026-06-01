@@ -32,7 +32,6 @@ void loop() {
             Serial.print ("B1 = " + String(bOne) + "\n");
             Serial.print (String(aOne) + " + " + String(bOne) + " = " + String(aOne + bOne) + "\n");
             delay(2000);
-            
         }
     }
 }

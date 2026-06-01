@@ -1,0 +1,107 @@
+// Made by Elliott Roach and Aimar Fernandez
+// Made June 2026
+// Goes through the truth table for a 2 bit adder in 2's complement
+
+// pin 7 = B bit one
+// pin 6 = A bit one
+// pin 13 = carry in
+// 1's
+int pin7 = 7;
+int pin6 = 6;
+int pin13 = 13;
+// 2's
+int pin2 = 2;
+int pin3 = 3;
+
+
+void setup() {
+    // put your setup code here, to run once:
+    Serial.begin(9600);
+    // 1's
+    pinMode(pin7, OUTPUT);
+    pinMode(pin6, OUTPUT);
+    // carry/subtract
+    pinMode(pin13, OUTPUT);
+    // 2's
+    pinMode(pin2, OUTPUT);
+    pinMode(pin3, OUTPUT);
+}
+
+
+void loop() {
+    // put your main code here, to run repeatedly:
+    digitalWrite(pin7, LOW);
+    digitalWrite(pin6, LOW);
+    digitalWrite(pin13, LOW);
+    digitalWrite(pin2, LOW);
+    digitalWrite(pin3, LOW);
+    const int onesColom = 1;
+    const int twosColom = 2;
+    const int fourssColom = 4;
+    const int eightsColom = 8;
+
+    int aOne = 0;
+    int aTwo = 0;
+    int bOne = 0;
+    int bTwo = 0; 
+    int cIn = 0;
+
+    int bOneNeg = 0;
+    int aOneNeg = 0; 
+
+    // base 10
+    int fullDesamalValue = 0;
+    int bDesamalValue = 0;
+    int aDesamalValue = 0;
+    int aOneDesamal = 0;
+    int bOneDesamal = 0;
+    int aTwoDesamal = 0;
+    int bTwoDesamal = 0;
+
+    for (aTwo = 0; aTwo < 2; aTwo++) {
+      for (bTwo = 0; bTwo < 2; bTwo++) {
+          for (aOne = 0; aOne < 2; aOne++) {
+              for (bOne = 0; bOne < 2; bOne++) {
+                  if (aTwo = 1) {
+                      aOne = 0;
+                      if (aOneNeg == 0) {
+                        aOneNeg = 1;
+                      } 
+                  }
+                  if (bTwo = 1) {
+                      bOne = 0;
+                      if (bOneNeg == 0) {
+                        bOneNeg = 1;
+                      } 
+                  }
+                  digitalWrite(pin6, aOneNeg);
+                  digitalWrite(pin7, aOneNeg);
+                  digitalWrite(pin2, aTwo);
+                  digitalWrite(pin3, bTwo);
+                  if (aOne == 1) {
+                      aOneDesamal = onesColom;
+                  } 
+                  if (bOne == 1) {
+                      bOneDesamal = onesColom;
+                  } 
+                  if (aTwo == 1) {
+                      aOneDesamal = onesColom - onesColom - onesColom;
+                  } 
+                  if (bTwo == 1) {
+                      bOneDesamal = onesColom - onesColom - onesColom;
+                  }
+                  aDesamalValue = aOneDesamal + aTwoDesamal;
+                  bDesamalValue = bOneDesamal + bTwoDesamal;
+                  Serial.print ("A = " + String(aDesamalValue) + "\n");
+                  Serial.print ("B = " + String(bDesamalValue) + "\n");
+                  Serial.print (String(aDesamalValue) + " + " + String(bDesamalValue) + " = " + String(aDesamalValue + bDesamalValue) + "\n\n");
+                  delay(2000);
+                  aOneDesamal = 0;
+                  aTwoDesamal = 0;
+                  bOneDesamal = 0;
+                  bTwoDesamal = 0;
+              }
+          }
+      }
+  }
+}
