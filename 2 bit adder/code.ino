@@ -61,11 +61,14 @@ void loop() {
                 Serial.print ("B = " + String(bTwo) + String(bOne) + "\n");
                 if (aOne == 1) {
                     aOneDesamal = onesColom;
-                } else if (bOne == 1) {
+                } 
+                if (bOne == 1) {
                     bOneDesamal = onesColom;
-                } else if (aTwo == 1) {
+                } 
+                if (aTwo == 1) {
                     aTwoDesamal = twosColom;
-                } else if (bTwo == 1) {
+                } 
+                if (bTwo == 1) {
                     bTwoDesamal = twosColom;
                 }
                 Serial.print (String(aOneDesamal + aTwoDesamal) + " + " + String(bOneDesamal +bTwoDesamal) + " = " + String(aTwoDesamal + aOneDesamal + bTwoDesamal + bOneDesamal + cIn) + "\n\n");
