@@ -35,7 +35,7 @@ void setup() {
                     if (a2Value == 1) {
                         aDecimalValue = (a1Value + -1) - 1
                     } elif {
-                        aDecimalValue = a1Value
+                        aDecimalValue = (a1Value * 1)
                     }
 
                     // show current calculation
