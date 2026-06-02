@@ -45,6 +45,7 @@ void loop() {
     digitalWrite(pin5, LOW);
     const int onesColom = 1;
     const int twosColom = 2;
+    const int fourssColom = 4;
 
     // base 2
     int aOne = 0;
@@ -59,8 +60,8 @@ void loop() {
 
     // bace 10
     int fullDesamalValue = 0;
-    int bDesamalValue = 0;
-    int aDesamalValue = 0;
+    int bDesamal = 0;
+    int aDesamal = 0;
 
     for (addSub = 0; addSub < 2; addSub++) {
         for (aFour = 0; aFour < 2; aFour++) {
@@ -83,13 +84,13 @@ void loop() {
                                     addSubSymbol = '-';
                                 }
                                 aDesamal = (aOne * onesColom) + (aTwo * twosColom) + (aFour * fourssColom);
-                                    bDesamal = (bOne * onesColom) + (bTwo * twosColom) + (bFour * fourssColom);
+                                bDesamal = (bOne * onesColom) + (bTwo * twosColom) + (bFour * fourssColom);
                                 if (addSub == 0) {
-                                    fullDesamalValue = aDesamalValue + bDesamalValue;
+                                    fullDesamalValue = aDesamal + bDesamal;
                                 } else {
-                                    fullDesamalValue = aDesamalValue - bDesamalValue;
+                                    fullDesamalValue = aDesamal - bDesamal;
                                 }
-                                Serial.print (String(aDesamalValue) + String(addSubSymbol) + String(bDesamalValue) + " = " + String(fullDesamalValue) + "\n\n");
+                                Serial.print (String(aDesamal) + String(addSubSymbol) + String(bDesamal) + " = " + String(fullDesamalValue) + "\n\n");
                                 delay(2000);
 
                                 // reseting
