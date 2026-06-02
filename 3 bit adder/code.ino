@@ -13,8 +13,8 @@ int pin13 = 13;
 int pin2 = 2;
 int pin3 = 3;
 //4's
-int pin4 = 4
-int pin5 = 5
+int pin4 = 4;
+int pin5 = 5;
 
 
 void setup() {
@@ -49,17 +49,17 @@ void loop() {
     const int eightsColom = 8;
     int aOne = 0;
     int aTwo = 0;
-    int afour = 0;
+    int aFour = 0;
     int bOne = 0;
     int bTwo = 0; 
-    int bfour = 0;
+    int bFour = 0;
     int cIn = 0;
 
     int aDesamal = 0;
     int bDesamal = 0;
 
-    for (afour = 0; afour < 2; afour++) {
-        for (bfour = 0; bfour < 2; bfour++) {
+    for (aFour = 0; aFour < 2; aFour++) {
+        for (bFour = 0; bFour < 2; bFour++) {
             for (aTwo = 0; aTwo < 2; aTwo++) {
                 for (bTwo = 0; bTwo < 2; bTwo++) {
                     for (aOne = 0; aOne < 2; aOne++) {
@@ -69,13 +69,13 @@ void loop() {
                             digitalWrite(pin7, bOne);
                             digitalWrite(pin2, aTwo);
                             digitalWrite(pin3, bTwo);
-                            digitalWrite(pin4, afour);
-                            digitalWrite(pin5, bfour);
+                            digitalWrite(pin4, aFour);
+                            digitalWrite(pin5, bFour);
                             Serial.print ("CIn = " + String(cIn) + "\n");
-                            Serial.print ("A = " + String(aTwo) + String(aOne) + "\n");
-                            Serial.print ("B = " + String(bTwo) + String(bOne) + "\n");
-                            aDesamal = (aOne * onesColom) + (aTwo * twosColom) + (afour * fourssColom)
-                            bDesamal = (bOne * onesColom) + (bTwo * twosColom) + (bfour * fourssColom)
+                            Serial.print ("A = " + String(aFour) + String(aTwo) + String(aOne) + "\n");
+                            Serial.print ("B = " + String(bFour) + String(bTwo) + String(bOne) + "\n");
+                            aDesamal = (aOne * onesColom) + (aTwo * twosColom) + (aFour * fourssColom);
+                            bDesamal = (bOne * onesColom) + (bTwo * twosColom) + (bFour * fourssColom);
                             Serial.print (String(aDesamal) + " + " + String(bDesamal) + " = " + String(aDesamal + bDesamal) + "\n\n");
                             delay(2000);
                             aDesamal = 0;
