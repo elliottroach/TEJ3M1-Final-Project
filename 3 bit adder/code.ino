@@ -1,6 +1,6 @@
-// Made by Elliott
+// Made by Elliott and Aimar
 // Made May 2026
-// Goes through the truth table for a 2 bit adder
+// Goes through the truth table for a 3 bit adder
 
 // pin 7 = B bit one
 // pin 6 = A bit one
@@ -71,11 +71,10 @@ void loop() {
                             digitalWrite(pin3, bTwo);
                             digitalWrite(pin4, aFour);
                             digitalWrite(pin5, bFour);
-                            Serial.print ("CIn = " + String(cIn) + "\n");
-                            Serial.print ("A = " + String(aFour) + String(aTwo) + String(aOne) + "\n");
-                            Serial.print ("B = " + String(bFour) + String(bTwo) + String(bOne) + "\n");
                             aDesamal = (aOne * onesColom) + (aTwo * twosColom) + (aFour * fourssColom);
                             bDesamal = (bOne * onesColom) + (bTwo * twosColom) + (bFour * fourssColom);
+                            Serial.print ("A = " + String(aDesamal) + "\n");
+                            Serial.print ("B = " + String(bDesamal) + "\n");
                             Serial.print (String(aDesamal) + " + " + String(bDesamal) + " = " + String(aDesamal + bDesamal) + "\n\n");
                             delay(2000);
                             aDesamal = 0;

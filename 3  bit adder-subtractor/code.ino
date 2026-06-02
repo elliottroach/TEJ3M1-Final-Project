@@ -1,6 +1,6 @@
-// Made by Elliott
-// Made May 2026
-// Goes through the truth table for a 2 bit adder
+// Made by Elliott and Aimar
+// Made June 2026
+// Goes through the truth table for a 3 bit adder subtractor
 
 // pin 7 = B bit one
 // pin 6 = A bit one
@@ -78,8 +78,6 @@ void loop() {
                                 digitalWrite(pin4, aFour);
                                 digitalWrite(pin5, bFour);
                                 Serial.print ("Add-Sub = " + String(addSub) + "\n");
-                                Serial.print ("A = " + String(aFour) + String(aTwo) + String(aOne) + "\n");
-                                Serial.print ("B = " + String(bFour) + String(bTwo) + String(bOne) + "\n");
                                 if (addSub == 1) {
                                     addSubSymbol = '-';
                                 }
@@ -90,6 +88,8 @@ void loop() {
                                 } else {
                                     fullDesamalValue = aDesamal - bDesamal;
                                 }
+                                Serial.print ("A = " + String(aDesamal) + "\n");
+                                Serial.print ("B = " + String(bDesamal) + "\n");
                                 Serial.print (String(aDesamal) + String(addSubSymbol) + String(bDesamal) + " = " + String(fullDesamalValue) + "\n\n");
                                 delay(2000);
 
