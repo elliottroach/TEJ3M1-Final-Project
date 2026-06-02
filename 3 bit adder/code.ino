@@ -59,10 +59,10 @@ void loop() {
     int bDesamal = 0;
 
     for (aFour = 0; aFour < 2; aFour++) {
-        for (bFour = 0; bFour < 2; bFour++) {
-            for (aTwo = 0; aTwo < 2; aTwo++) {
-                for (bTwo = 0; bTwo < 2; bTwo++) {
-                    for (aOne = 0; aOne < 2; aOne++) {
+        for (aTwo = 0; aTwo < 2; aTwo++) {
+            for (aOne = 0; aOne < 2; aOne++) {
+                for (bFour = 0; bFour < 2; bFour++) {
+                    for (bTwo = 0; bTwo < 2; bTwo++) {
                         for (bOne = 0; bOne < 2; bOne++) {
                             digitalWrite(pin13, cIn);
                             digitalWrite(pin6, aOne);
