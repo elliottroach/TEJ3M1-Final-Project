@@ -1,6 +1,6 @@
 // Created by Aimar Fernandez and Elliott Roach
 // Created on Mar 2026
-// This program cycles through all possibilities of a full adder
+// This program cycles through all possibilities of a 2 bit adder
 
 const int pinA1 = 6;
 const int pinA2 = 2;

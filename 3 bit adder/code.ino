@@ -1,5 +1,5 @@
-// Made by Elliott and Aimar
-// Made May 2026
+// Made by Elliott and Aimar and Caleb
+// Made June 2026
 // Goes through the truth table for a 3 bit adder
 
 // pin 7 = B bit one

@@ -1,4 +1,4 @@
-// Made by Elliott
+// Made by Elliott and Aimar
 // Made May 2026
 // Goes through the truth table for a 2 bit adder
 

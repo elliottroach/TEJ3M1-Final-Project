@@ -1,4 +1,4 @@
-// Made by Elliott and Aimar
+// Made by Elliott Aimar and Caleb
 // Made June 2026
 // Goes through the truth table for a 3 bit adder subtractor
 
