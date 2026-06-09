@@ -1,6 +1,6 @@
 // Created by Aimar Fernandez, Elliott Roach and Caleb Andreas
 // Created on Jun 2026
-// This program cycles through all possibilities of a 4 bit adder
+// This program cycles through all possibilities of a 4 bit adder subtractor
 
 // a pins
 const int pinA1 = 6;
