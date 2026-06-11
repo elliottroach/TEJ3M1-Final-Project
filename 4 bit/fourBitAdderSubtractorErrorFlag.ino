@@ -105,10 +105,10 @@ void setup() {
                                         int errorCheck = 0;
                                         errorCheck = digitalRead(pinError);
                                         if (errorCheck == 1 ) {
-                                            Serial.print("\n(" + String(aDecimalValue) + ")" + calcSymbol + "(" + String(bDecimalValue) + ") = (" + String(decimalAnswer) + ")" + "Incorrect\n");
+                                            Serial.print("\n(" + String(aDecimalValue) + ")" + calcSymbol + "(" + String(bDecimalValue) + ") = (" + String(decimalAnswer) + ")" + " Incorrect\n");
+                                        } else {
+                                            Serial.print("\n(" + String(aDecimalValue) + ")" + calcSymbol + "(" + String(bDecimalValue) + ") = (" + String(decimalAnswer) + ")" + " Correct\n");
                                         }
-                                        Serial.print("\n(" + String(aDecimalValue) + ")" + calcSymbol + "(" + String(bDecimalValue) + ") = (" + String(decimalAnswer) + ")" + "correct\n");
-                                        
                                         // wait 1 second
                                         delay(2000);
                                     }
